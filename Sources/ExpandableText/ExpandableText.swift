@@ -36,12 +36,12 @@ public struct ExpandableText: View {
     
     private let text: String
     internal var font: Font = .body
-    internal var style: any ShapeStyle = .primary
+    internal var style: any ShapeStyle = HierarchicalShapeStyle.primary
     
     internal var lineLimit: Int = 3
     internal var moreButtonText: String = "more"
     internal var moreButtonFont: Font?
-    internal var moreButtonColor: Color = .accentColor
+    internal var moreButtonStyle: any ShapeStyle = .tint
     internal var expandAnimation: Animation = .default
     internal var collapseEnabled: Bool = false
     internal var trimMultipleNewlinesWhenTruncated: Bool = true
@@ -93,7 +93,7 @@ public struct ExpandableText: View {
                     } label: {
                         Text(moreButtonText)
                             .font(moreButtonFont ?? font)
-                            .foregroundColor(moreButtonColor)
+                            .foregroundStyle(AnyShapeStyle(moreButtonStyle))
                     }
                 }
             }))

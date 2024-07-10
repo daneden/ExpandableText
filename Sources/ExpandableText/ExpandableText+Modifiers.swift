@@ -70,9 +70,9 @@ public extension ExpandableText {
      - Parameter color: The color to use for the "show more" button. Defaults to `accentColor`
      - Returns: A new `ExpandableText` instance with the specified "show more" button color applied.
      */
-    func moreButtonColor(_ color: Color) -> Self {
+    func moreButtonColor(_ style: any ShapeStyle) -> Self {
         var copy = self
-        copy.moreButtonColor = color
+        copy.moreButtonStyle = style
         return copy
     }
     
