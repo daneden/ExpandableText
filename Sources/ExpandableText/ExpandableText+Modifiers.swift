@@ -20,17 +20,17 @@ public extension ExpandableText {
         copy.font = font
         return copy
     }
-    
-    /**
-     Sets the foreground color for the text in the `ExpandableText` instance.
-     - Parameter color: The foreground color to use for the text. Defaults to `primary`
-     - Returns: A new `ExpandableText` instance with the specified foreground color applied.
-     */
-    func foregroundColor(_ color: Color) -> Self {
-        var copy = self
-        copy.color = color
-        return copy
-    }
+	
+		/**
+		 Sets the foreground style for the text in the `ExpandableText` instance.
+		 - Parameter color: The foreground style to use for the text. Defaults to `primary`
+		 - Returns: A new `ExpandableText` instance with the specified foreground color applied.
+		 */
+		func foregroundColor(_ style: any ShapeStyle) -> Self {
+			var copy = self
+			copy.style = style
+			return copy
+		}
     
     /**
      Sets the maximum number of lines to use for rendering the text in the `ExpandableText` instance.
